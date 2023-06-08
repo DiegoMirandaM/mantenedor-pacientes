@@ -5,13 +5,26 @@ import Formulario from './components/Formulario'
 
 function App() {
 
+  const [pacientes, setPacientes] = useState([]);
+  const [pacienteSeleccionado, setPacienteSeleccionado] = useState({});
+
   return (
     <div className="w-11/12 mx-auto mt-10">
       <Header />
 
-      <div className='mt-12 md:flex'>
-        <Formulario />
-        <ListadoPacientes />
+      <div className='mt-10 md:flex'>
+
+        <Formulario
+          pacientes={pacientes}
+          setPacientes={setPacientes}
+          pacienteSeleccionado={pacienteSeleccionado}
+        />
+
+        <ListadoPacientes
+          pacientes={pacientes}
+          setPacienteSeleccionado={setPacienteSeleccionado}
+        />
+
       </div>
 
     </div>
