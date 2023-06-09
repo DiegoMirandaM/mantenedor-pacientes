@@ -14,8 +14,7 @@ const Formulario = ({ pacientes, setPacientes, pacienteSeleccionado, setPaciente
 
     // Se activa al presionar editar sobre un paciente. Toma sus datos y completa el formulario para su edicion.
     useEffect(() => {
-        console.log(Object.keys(pacienteSeleccionado));
-
+        
         if (Object.keys(pacienteSeleccionado).length == 0) return;
 
         const { nombre, propietario, email, fechaAlta, sintomas } = pacienteSeleccionado;
