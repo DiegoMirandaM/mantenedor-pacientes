@@ -8,6 +8,17 @@ function App() {
   const [pacientes, setPacientes] = useState([]);
   const [pacienteSeleccionado, setPacienteSeleccionado] = useState({});
 
+  const eliminarPaciente = (id) => {
+
+    const estaSeguro = confirm('¿Estás seguro que quieres eliminar el registro?');
+
+    if(!estaSeguro) return;
+
+    const listadoActualizado = pacientes.filter(pac => pac.id !== id)
+
+    setPacientes(listadoActualizado);
+  }
+
   return (
     <div className="w-11/12 mx-auto mt-10">
       <Header />
@@ -24,6 +35,7 @@ function App() {
         <ListadoPacientes
           pacientes={pacientes}
           setPacienteSeleccionado={setPacienteSeleccionado}
+          eliminarPaciente={eliminarPaciente}
         />
 
       </div>

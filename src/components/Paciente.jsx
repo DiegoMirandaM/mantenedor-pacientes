@@ -1,8 +1,8 @@
 
 
-export default function Paciente({ paciente, setPacienteSeleccionado }) {
+export default function Paciente({ paciente, setPacienteSeleccionado, eliminarPaciente }) {
 
-    const { nombre, propietario, email, fechaAlta, sintomas } = paciente;
+    const { nombre, propietario, email, fechaAlta, sintomas, id } = paciente;
 
 
 
@@ -43,6 +43,7 @@ export default function Paciente({ paciente, setPacienteSeleccionado }) {
                     </button>
 
                     <button className="bg-red-700 px-4 sm:px-10 py-2 rounded-md text-white font-bold uppercase hover:bg-red-800 transition-colors"
+                        onClick={ () => eliminarPaciente(id)}
                     >
                         Eliminar
                     </button>
